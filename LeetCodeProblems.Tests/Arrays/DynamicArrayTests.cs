@@ -52,4 +52,19 @@ public class DynamicArrayTests
         // Assert
         Assert.Equal(expectedVal, actual);
     }
+
+    [Fact]
+    public void Set_Value_StoredInCorrectIndex()
+    {
+        // Arrange
+        DynamicArray arr = new(2);
+        int expectedVal = 3;
+        int val = 3;
+
+        // Act
+        arr.Set(0, val);
+
+        // Assert
+        Assert.Equal(expectedVal, arr.Get(0));
+    }
 }
