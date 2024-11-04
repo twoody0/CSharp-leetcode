@@ -47,7 +47,7 @@ A **Dynamic Array** is a data structure that grows and shrinks dynamically as el
 ## Example Usage
 
 ```csharp
-var dynamicArray = new DynamicArray(2);
+DynamicArray dynamicArray = new (2);
 dynamicArray.PushBack(10);     // Adds 10 to the array
 dynamicArray.PushBack(20);     // Adds 20 to the array
 dynamicArray.PushBack(30);     // Triggers resize, then adds 30
