@@ -2,8 +2,17 @@
 
 public class DynamicArray
 {
+    private int[] _array;
+    private int _size;
+    private int _capacity;
+    public int Size => _size;
+    public int Capacity => _capacity;
+
     public DynamicArray(int capacity)
     {
+        _capacity = capacity;
+        _array = new int[_capacity];
+        _size = 0;
     }
 
     public int Get(int i)
