@@ -16,19 +16,22 @@ public class DynamicArrayTests
         Assert.Equal(actual, capacity);
     }
 
-    [Fact]
-    public void PushBack_GivenVariable_AddsElement()
+    [Theory]
+    [InlineData(new int[] { 3, 5 }, 1, 5)]
+    [InlineData(new int[] { 1, 2, 3 }, 2, 3)]
+    public void PushBack_GivenVariable_AddsElement(int[] values, int index, int expectedVal)
     {
         // Arrange
-        DynamicArray arr = new(2);
-        int expectedVal = 5;
+        DynamicArray arr = new(values.Length);
 
         // Act
-        arr.PushBack(3);
-        arr.PushBack(5);
+        foreach (int value in values)
+        {
+            arr.PushBack(value);
+        }
 
         // Assert
-        Assert.Equal(expectedVal, arr.Get(1));
+        Assert.Equal(expectedVal, arr.Get(index));
     }
 
     [Fact]
