@@ -17,15 +17,17 @@ public class DynamicArray
 
     public int Get(int i)
     {
-        return 0;
+        return _array[i];
     }
 
     public void Set(int i, int n)
     {
+        _array[i] = n;
     }
 
     public void PushBack(int n)
     {
+        _array[_size++] = n;
     }
 
     public int PopBack()
