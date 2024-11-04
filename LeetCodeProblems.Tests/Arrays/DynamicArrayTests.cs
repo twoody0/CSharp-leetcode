@@ -3,6 +3,20 @@
 public class DynamicArrayTests
 {
     [Fact]
+    public void Constructor_GivenCapacity_InitializesDynamicArray()
+    {
+        // Arrange
+        int capacity = 5;
+        DynamicArray arr = new(capacity);
+
+        // Act
+        int actual = arr.Capacity;
+
+        // Assert
+        Assert.Equal(actual, capacity);
+    }
+
+    [Fact]
     public void Get_GivenIndex_ReturnsElement()
     {
         // Arrange
