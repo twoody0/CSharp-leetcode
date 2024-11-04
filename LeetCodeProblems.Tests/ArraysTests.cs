@@ -1,6 +1,6 @@
 namespace LeetCodeProblems.Tests;
 
-public class UnitTest1
+public class ArraysTests
 {
     [Fact]
     public void Test1()
