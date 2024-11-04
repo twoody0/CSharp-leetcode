@@ -27,6 +27,10 @@ public class DynamicArray
 
     public void PushBack(int n)
     {
+        if (_size == _capacity)
+        {
+            Resize();
+        }
         _array[_size++] = n;
     }
 
@@ -37,15 +41,23 @@ public class DynamicArray
 
     private void Resize()
     {
+        int newCapacity = _capacity * 2;
+        int[] newArray = new int[newCapacity];
+        for (int i = 0; i < _size; i++)
+        {
+            newArray[i] = _array[i];
+        }
+        _array = newArray;
+        _capacity = newCapacity;
     }
 
     public int GetSize()
     {
-        return 0;
+        return _size;
     }
 
     public int GetCapacity()
     {
-        return 0;
+        return _capacity;
     }
 }
