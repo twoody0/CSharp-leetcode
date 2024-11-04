@@ -85,4 +85,22 @@ public class DynamicArrayTests
         // Assert
         Assert.Equal(expectedSize, actualSize);
     }
+
+    [Fact]
+    public void Resize_ArrayLargerThanInitialCapacity_ProperlyResizesArray()
+    {
+        // Arrange
+        DynamicArray arr = new(2);
+
+        // Act
+        arr.PushBack(42);
+        arr.PushBack(43);
+        arr.PushBack(44);
+
+        int expectedCapacity = 4;
+        int actualCapacity = arr.GetCapacity();
+
+        // Assert
+        Assert.Equal(expectedCapacity, actualCapacity);
+    }
 }
