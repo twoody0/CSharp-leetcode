@@ -17,6 +17,21 @@ public class DynamicArrayTests
     }
 
     [Fact]
+    public void PushBack_GivenVariable_AddsElement()
+    {
+        // Arrange
+        DynamicArray arr = new(2);
+        int expectedVal = 5;
+
+        // Act
+        arr.PushBack(3);
+        arr.PushBack(5);
+
+        // Assert
+        Assert.Equal(expectedVal, arr.Get(1));
+    }
+
+    [Fact]
     public void Get_GivenIndex_ReturnsElement()
     {
         // Arrange
