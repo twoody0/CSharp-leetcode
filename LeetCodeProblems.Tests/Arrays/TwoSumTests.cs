@@ -3,11 +3,10 @@ namespace LeetCodeProblems.Tests.Arrays;
 public class TwoSumTests
 {
     [Theory]
-    [InlineData(new int[] { 2, 7, 11, 15 }, 9)]
-    public void FindTwoSum_ValidNumbers_ReturnsArgument(int[] nums, int target)
+    [InlineData(new int[] { 2, 7, 11, 15 }, 9, new int[] { 0, 1 })]
+    public void FindTwoSum_ValidNumbers_ReturnsExpectedIndicies(int[] nums, int target, int[] expected)
     {
         // Arrange
-        int[] expected = { 0, 1 };
 
         // Act
         int[] actual = TwoSum.FindTwoSum(nums, target);
