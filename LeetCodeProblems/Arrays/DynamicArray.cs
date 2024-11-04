@@ -31,7 +31,8 @@ public class DynamicArray
         {
             Resize();
         }
-        _array[_size++] = n;
+        int newSize = _size++;
+        _array[newSize] = n;
     }
 
     public int PopBack()
