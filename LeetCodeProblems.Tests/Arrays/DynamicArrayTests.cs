@@ -67,4 +67,22 @@ public class DynamicArrayTests
         // Assert
         Assert.Equal(expectedVal, arr.Get(0));
     }
+
+    [Fact]
+    public void GetSize_GivenCapacity_ReturnsNumberOfElements()
+    {
+        // Arrange
+        DynamicArray arr = new(5);
+        arr.PushBack(1);
+        arr.PushBack(2);
+        arr.PushBack(3);
+
+        int expectedSize = 3;
+
+        // Act
+        int actualSize = arr.GetSize();
+
+        // Assert
+        Assert.Equal(expectedSize, actualSize);
+    }
 }
